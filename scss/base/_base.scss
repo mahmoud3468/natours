@@ -1,0 +1,40 @@
+@use "../abstracts/mixins" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 55%; // 8.8px
+  scroll-behavior: smooth;
+
+  @include mediaQuery(phone) {
+    font-size: 60.25%; // 10px
+  }
+  @include mediaQuery(tablet) {
+    font-size: 63.5%; // 10.5px
+  }
+  @include mediaQuery(desktop) {
+    font-size: 68.75%; // 11px
+  }
+  @include mediaQuery(large-desktop) {
+    font-size: 100%; // 16px
+  }
+}
+
+body {
+  @include mediaQuery(labtop) {
+    padding: 3rem;
+  }
+}
+
+.site-wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}

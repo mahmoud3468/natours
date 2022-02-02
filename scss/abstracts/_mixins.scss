@@ -1,0 +1,36 @@
+@mixin mediaQuery($breakpoint) {
+  @if $breakpoint == large-desktop {
+    // 1920px
+    @media (min-width: 120em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
+    // 1200px
+    @media (min-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == labtop {
+    // 992px
+    @media (min-width: 62em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    // 576px
+    @media (min-width: 36em) {
+      @content;
+    }
+  }
+}

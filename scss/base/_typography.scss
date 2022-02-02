@@ -1,0 +1,90 @@
+@use "../abstracts" as *;
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: $def-line-height;
+  color: $gray-color-dark;
+}
+
+.primary-heading {
+  color: $white-color;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+
+    animation: moveRight 0.8s ease-out forwards;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.5rem;
+
+    animation: moveLeft 0.8s ease-out forwards;
+  }
+
+  @include mediaQuery(phone) {
+    &--main {
+      font-size: 5rem;
+      letter-spacing: 2.5rem;
+    }
+    &--sub {
+      letter-spacing: 0.7rem;
+    }
+  }
+
+  @include mediaQuery(desktop) {
+    &--main {
+      font-size: 5rem;
+      letter-spacing: 3rem;
+    }
+    &--sub {
+      letter-spacing: 1rem;
+    }
+  }
+}
+
+.secondary-heading {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  background-image: linear-gradient(
+    to right,
+    $primary-color-light,
+    $primary-color-dark
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: $def-transition;
+
+  &:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($black-color, 0.2);
+  }
+}
+
+.tertiary-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.paragraph {
+  font-size: 1.5rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

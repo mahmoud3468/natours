@@ -1,0 +1,124 @@
+@use '../abstracts' as *;
+
+.footer {
+  padding: 2rem;
+  background-color: $gray-color-darker;
+  color: $white-color;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 5rem;
+    column-gap: 3rem;
+  }
+
+  &__info {
+    grid-row: 2;
+    grid-column: span 6;
+    text-align: center;
+  }
+
+  &__logo {
+    height: 8rem;
+  }
+
+  &__social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    gap: 2rem;
+    margin: 2rem 0px;
+  }
+
+  &__social-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__social-link {
+    text-decoration: none;
+    color: $gray-color-light;
+    font-size: 3.5rem;
+  }
+
+  &__copy-rights {
+    font-size: 1.5rem;
+    color: $gray-color-light;
+
+    a {
+      color: $gray-color-light;
+    }
+  }
+
+  &__accounts,
+  &__company,
+  &__resources {
+    grid-column: span 2;
+    margin: 0 auto;
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: $gray-color-dark;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $gray-color-light;
+    }
+  }
+}
+
+@include mediaQuery(tablet) {
+  .footer {
+    padding: 3rem;
+
+    &__grid {
+      grid-template-columns: 3fr 1fr 1fr 1fr;
+      row-gap: 5rem;
+      column-gap: 2rem;
+      align-items: center;
+    }
+
+    &__info {
+      grid-row: initial;
+      grid-column: auto;
+      text-align: left;
+    }
+
+    &__logo {
+      height: 10rem;
+    }
+
+    &__social-links {
+      justify-content: left;
+    }
+
+    &__accounts,
+    &__company,
+    &__resources {
+      grid-column: auto;
+    }
+  }
+}
+
+@include mediaQuery(labtop) {
+  .footer {
+    padding: 6rem;
+  }
+}

@@ -1,0 +1,178 @@
+@use "../abstracts" as *;
+
+.about {
+  padding: 15rem 0 40rem 0;
+  margin-top: -10rem;
+  background-color: $gray-color-light;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 6rem;
+  }
+
+  &__images-box {
+    position: relative;
+
+    .about__image {
+      width: 55%;
+      position: absolute;
+      box-shadow: 0 1.5rem 4rem rgba($black-color, 0.4);
+      transition: all 0.1s;
+      outline-offset: 1rem;
+      z-index: 1;
+    }
+
+    .about__image-1 {
+      top: -2rem;
+      left: 0;
+    }
+
+    .about__image-2 {
+      top: 2rem;
+      right: 0;
+    }
+
+    .about__image-3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    .about__image:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 2.5rem 4rem rgba($black-color, 0.5);
+      outline: 1.1rem solid $primary-color;
+      z-index: 10;
+    }
+
+    &:hover .about__image:not(:hover) {
+      transform: scale(0.95);
+    }
+  }
+
+  @include mediaQuery(tablet) {
+    & {
+      padding: 20rem 0;
+      margin-top: -15rem;
+    }
+    &__grid {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 3rem;
+    }
+  }
+}
+
+.features {
+  padding: 20rem 0;
+  margin-top: -15rem;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($primary-color-light, 0.8),
+      rgba($primary-color-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 3rem;
+  }
+
+  .features__box {
+    background-color: rgba($white-color, 0.8);
+    box-shadow: 0 1.5rem 2.5rem rgba($black-color, 0.2);
+    transition: all 0.25s;
+    border-radius: 3px;
+    text-align: center;
+    padding: 3rem 2.5rem;
+
+    &:hover {
+      transform: translateY(-1rem) scale(1.03);
+      box-shadow: 0 2rem 3rem rgba($black-color, 0.3);
+    }
+
+    &-icon {
+      font-size: 6rem;
+      margin-bottom: 2.5rem;
+      display: inline-block;
+
+      background-image: linear-gradient(
+        to right,
+        $primary-color-light,
+        $primary-color-dark
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    &-text {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.tours {
+  background: $gray-color-light;
+  padding: 20rem 0 10rem;
+  margin-top: -15rem;
+
+  &__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 40rem));
+    gap: 3rem;
+
+    @include mediaQuery(tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
+    }
+  }
+}
+
+.testimonials {
+  position: relative;
+  padding: 10rem 0;
+}
+
+.order {
+  padding: 10rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $primary-color-light,
+    $primary-color-dark
+  );
+
+  &__form {
+    width: 100%;
+    height: auto;
+    background-color: rgba($white-color, 0.8);
+    border-radius: $medium-radius;
+    box-shadow: $meduim-shadow;
+  }
+
+  @include mediaQuery(labtop) {
+    .order {
+      padding: 15rem 0;
+
+      &__form {
+        width: 85%;
+        height: 45rem;
+        margin: 0 auto;
+        background-color: $white-color;
+        background-image: linear-gradient(
+            105deg,
+            rgba($white-color, 0.9) 55%,
+            transparent 50%
+          ),
+          url(../img/nat-10.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+@use '../base/utilities' as *;
+
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($primary-color-light, 0.8),
+      rgba($primary-color-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-position: top;
+  background-size: cover;
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+
+  &__wrapper {
+    @extend %flex-center;
+    height: 100%;
+  }
+
+  &__text-box {
+    transform: translateY(-5rem);
+    text-align: center;
+  }
+
+  @include mediaQuery(desktop) {
+    & {
+      clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    }
+  }
+}

@@ -1,0 +1,169 @@
+@use "../abstracts" as *;
+@use "../base/utilities" as *;
+
+.navigation {
+  height: 10rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  @include mediaQuery(labtop) {
+    transform: translateY(5rem);
+  }
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  &__logo {
+    img {
+      height: 3.2rem;
+    }
+  }
+
+  &__list {
+    @extend %flex-center;
+    transform: translateY(-4rem);
+    flex-direction: column;
+    gap: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $white-color;
+    transition: all 0.8s cubic-bezier(1, -1.17, 0.23, 1.71);
+    min-height: 100vh;
+    width: 0%;
+    opacity: 0;
+    z-index: 2000;
+
+    &-link:link,
+    &-link:visited {
+      display: inline-block;
+      font-size: 2.1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.25rem;
+      text-decoration: none;
+      color: inherit;
+      padding: 1rem 2rem;
+
+      background-image: linear-gradient(
+        120deg,
+        transparent 50%,
+        $white-color 50%
+      );
+      background-size: 220%;
+      background-position: left;
+      transition: $def-transition;
+
+      &:hover {
+        background-position: right;
+        color: $primary-color;
+        transform: translateX(0.5rem);
+      }
+
+      span {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  &__button {
+    @extend %flex-center;
+    position: relative;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: $rounded-radius;
+    background-color: $white-color;
+    box-shadow: $small-shadow;
+    cursor: pointer;
+
+    // Burger icon
+    &-icon {
+      position: relative;
+      width: 2.8rem;
+      height: 2px;
+      display: inline-block;
+      border-radius: $medium-radius;
+      background-color: $gray-color-dark;
+
+      z-index: 3000;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $gray-color-dark;
+        transition: $fast-transition;
+      }
+
+      &::before {
+        top: 0.7rem;
+      }
+      &::after {
+        bottom: 0.7rem;
+      }
+
+      // Animate the button
+      .nav-open & {
+        background-color: transparent;
+      }
+      .nav-open &::before {
+        top: 0;
+        transform: rotate(135deg);
+      }
+      .nav-open &::after {
+        bottom: 0;
+        transform: rotate(-135deg);
+      }
+    }
+
+    // Navigation background
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(
+        $primary-color-light,
+        $primary-color-dark
+      );
+      transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+      border-radius: $rounded-radius;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: $rounded-radius;
+      z-index: 3000;
+    }
+  }
+
+  // Toggling the navigation menu
+  &.nav-open &__button::after {
+    transform: scale(80);
+  }
+
+  &.nav-open &__list {
+    width: 100%;
+    opacity: 1;
+  }
+}
