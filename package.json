@@ -2,15 +2,20 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "",
+  "browserslist": "last 10 versions",
   "scripts": {
-    "start": "parcel index.html",
+    "watch:sass": "sass scss/main.scss --style=compressed css/style.css",
+    "prefix:css": "postcss css/style.css --use autoprefixer --output css/style.css",
     "build": "parcel build index.html"
   },
   "keywords": [],
-  "author": "",
+  "author": "mahmoud elsayed",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
-    "parcel": "^2.2.1"
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.2.1",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.7"
   }
 }

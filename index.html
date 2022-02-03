@@ -3,11 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- GOOGLE FONTS -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,800,900"
+    <meta
+      name="description"
+      content="Natours | Exciting tours for adventurous people"
     />
 
     <!-- FONT AWESOME 5.15.5 -->
@@ -20,7 +18,7 @@
     />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
-    <link rel="stylesheet" href="./scss/main.scss" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
@@ -80,9 +78,9 @@
                 <span class="primary-heading--sub">is where life happens</span>
               </h1>
 
-              <a href="#" class="btn btn--white btn--animated"
-                >discover our tours</a
-              >
+              <a href="#" class="btn btn--white btn--animated">
+                discover our tours
+              </a>
             </div>
           </div>
         </div>
@@ -125,17 +123,17 @@
 
                 <div class="about__images-box">
                   <img
-                    src="./img/nat-1-large.jpg"
+                    src="./img/nat-1.webp"
                     class="about__image about__image-1"
                     alt="nature photo"
                   />
                   <img
-                    src="./img/nat-2-large.jpg"
+                    src="./img/nat-2.webp"
                     class="about__image about__image-2"
                     alt="nature photo"
                   />
                   <img
-                    src="./img/nat-3-large.jpg"
+                    src="./img/nat-3.webp"
                     class="about__image about__image-3"
                     alt="nature photo"
                   />
@@ -317,7 +315,7 @@
               <div class="testimonial">
                 <figure class="testimonial__person">
                   <img
-                    src="img/nat-8.jpg"
+                    src="img/nat-8.webp"
                     class="testimonial__person-image"
                     alt="person on a tour"
                   />
@@ -344,7 +342,7 @@
               <div class="testimonial">
                 <figure class="testimonial__person">
                   <img
-                    src="img/nat-9.jpg"
+                    src="img/nat-9.webp"
                     class="testimonial__person-image"
                     alt="person on a tour"
                   />
@@ -528,8 +526,8 @@
           <i class="close-modal-icon fas fa-times close-modal"></i>
           <div class="modal__grid">
             <div class="modal__content-left">
-              <img src="img/nat-8.jpg" alt="" />
-              <img src="img/nat-9.jpg" alt="" />
+              <img src="img/nat-8.webp" alt="" />
+              <img src="img/nat-9.webp" alt="" />
             </div>
             <div class="modal__content-right">
               <h2 class="secondary-heading mb-sm">Start booking now</h2>
@@ -560,29 +558,6 @@
       </div>
     </div>
 
-    <script>
-      const navigation = document.querySelector(".navigation");
-      const burgerBtn = document.querySelector(".navigation__button");
-
-      burgerBtn.addEventListener("click", () => {
-        navigation.classList.toggle("nav-open");
-      });
-
-      const modal = document.querySelector(".modal");
-      const openModalBtns = document.querySelectorAll(".open-modal");
-      const closeModalBtns = document.querySelectorAll(".close-modal");
-
-      openModalBtns.forEach((btn) =>
-        btn.addEventListener("click", () => {
-          modal.classList.add("modal-open");
-        })
-      );
-
-      closeModalBtns.forEach((btn) =>
-        btn.addEventListener("click", () => {
-          modal.classList.remove("modal-open");
-        })
-      );
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
