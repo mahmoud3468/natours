@@ -38,6 +38,11 @@
   text-transform: capitalize !important;
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 .mt-xs {
   margin-top: 0.5rem;
 }

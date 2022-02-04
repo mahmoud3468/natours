@@ -3,6 +3,14 @@ const burgerBtn = document.querySelector(".navigation__button");
 
 burgerBtn.addEventListener("click", () => {
   navigation.classList.toggle("nav-open");
+  document.body.classList.toggle("stop-scrolling");
+});
+
+navigation.addEventListener("click", (e) => {
+  if (e.target.closest("li")) {
+    navigation.classList.remove("nav-open");
+    document.body.classList.remove("stop-scrolling");
+  }
 });
 
 const modal = document.querySelector(".modal");

@@ -31,7 +31,7 @@
     @extend %flex-center;
     transform: translateY(-4rem);
     flex-direction: column;
-    gap: 2.5rem;
+    row-gap: 2.5rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -158,6 +158,10 @@
   }
 
   // Toggling the navigation menu
+  &.nav-open body {
+    overflow: hidden;
+  }
+
   &.nav-open &__button::after {
     transform: scale(80);
   }

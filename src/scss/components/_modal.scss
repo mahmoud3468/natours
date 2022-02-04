@@ -18,7 +18,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 15rem 1fr;
-    gap: 2rem;
+    row-gap: 2rem;
   }
 
   &__content {
@@ -47,7 +47,7 @@
       div {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        row-gap: 2rem;
         font-size: 1.4rem;
         margin: 1rem 0 2rem 0;
         hyphens: auto;
@@ -84,7 +84,7 @@
       grid-template-rows: unset;
       grid-template-columns: 350px 1fr;
       align-items: center;
-      gap: 3rem;
+      column-gap: 3rem;
     }
 
     &__content {
@@ -102,7 +102,7 @@
       &-right {
         div {
           flex-direction: row;
-          gap: 1.5rem;
+          column-gap: 1.5rem;
           padding-right: 1.5rem;
         }
       }

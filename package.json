@@ -4,8 +4,9 @@
   "description": "",
   "browserslist": "last 10 versions",
   "scripts": {
-    "watch:sass": "sass scss/main.scss --style=compressed css/style.css",
-    "prefix:css": "postcss css/style.css --use autoprefixer --output css/style.css",
+    "watch:sass": "sass src/scss/main.scss --style=compressed src/css/style.css -w",
+    "prefix:css": "postcss src/css/style.css --use autoprefixer --output src/css/style.css",
+    "start": "parcel index.html",
     "build": "parcel build index.html"
   },
   "keywords": [],
